@@ -1,0 +1,25 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+a {
+    color: red;
+    text-align: center;
+}
+
+ol {
+    text-align: left;
+}
+
+ul {
+    text-align: left;
+}
+
+li {
+    color: white;
+}
