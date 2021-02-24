@@ -4,9 +4,11 @@
 	<head>
 		<meta charset = "utf-8">
 		<title>Hello World</title>
+		<link rel="stylesheet" type="text/css" href="Css/style.php" />
 	</head>
 	
 	<body>
+		echo <div class="contentTitle">texto</div>';
 		<h1> Primeiro, estudando variáveis PHP</h1>
 		<h2> Variável nula: </h2>
 		<?PHP
@@ -162,5 +164,6 @@
 				}
 				
 				?>
+				
 	</body>
 </html>
