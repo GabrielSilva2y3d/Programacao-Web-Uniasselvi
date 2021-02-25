@@ -4,11 +4,9 @@
 	<head>
 		<meta charset = "utf-8">
 		<title>Hello World</title>
-		<link rel="stylesheet" type="text/css" href="Css/style.php" />
 	</head>
 	
 	<body>
-		echo <div class="contentTitle">texto</div>';
 		<h1> Primeiro, estudando variáveis PHP</h1>
 		<h2> Variável nula: </h2>
 		<?PHP
@@ -55,6 +53,7 @@
 				echo "<br/>";
 
 				/* Constante com Array */
+				echo "Constante com Array: ";
 				const Pokemon = array('Pikachu','Lizardon','Gekkouga','Eve');
 				for ($cont = 0; $cont <= 4;$cont++){
 					echo Pokemon[$cont].", ";
@@ -69,12 +68,12 @@
 			<?PHP
 				/*De acordo com o valor da variavel $saldoBancario
 				o resultado do programa pode variar */
-				echo "<p>SsaldoBancario = 42389.50;<br/>
-				if(SsaldoBancario > 42390){<br/>
-					echo 'Vou comprar um carro 0KM :D';<br/>
+				echo '<p>$saldoBancario = 42389.50;<br/>
+				if($saldoBancario > 42390){<br/>
+					echo "Vou comprar um carro 0KM :D";<br/>
 				}else{<br/>
-					echo 'Vou comprar um carro usado :/';<br/>
-				}</p>";
+					echo "Vou comprar um carro usado :/";<br/>
+				}</p>';
 
 				$saldoBancario = 42389.50;
 				if($saldoBancario > 42390){
@@ -92,26 +91,26 @@
 					O algoritimo monta a mensagem de erro de
 					acordo com a quantidade de erros encontrada*/
 
-					echo "<p>SquantidadeErros = 3;<br/>
-					switch(SquantidadeErros){<br/>
+					echo '<p>$quantidadeErros = 3;<br/>
+					switch($quantidadeErros){<br/>
 						case 0:<br/>
-							SmensagemDeErro = 'Nenhum';<br/>
+							$mensagemDeErro = "Nenhum";<br/>
 							break;<br/>
 							<br/>
 						case 1:<br/>
-							SmensagemDeErro = 'Um';<br/>
+							$mensagemDeErro = "Um";<br/>
 							break;<br/>
 							<br/>
 						case 2:<br/>
-							SmensagemDeErro = 'Dois';<br/>
+							$mensagemDeErro = "Dois";<br/>
 							break;<br/>
 							<br/>
 						default:<br/>
-							SmensagemDeErro = 'Mais de dois';<br/>	
+							$mensagemDeErro = "Mais de dois";<br/>	
 							<br/>
 					}<br/>
-					SmensagemDeErro .= 'erro(s) encontrado(s)';<br/>
-					echo SmensagemDeErro;</p>";
+					$mensagemDeErro .= "erro(s) encontrado(s)";<br/>
+					echo $mensagemDeErro;</p>';
 
 					$quantidadeErros = 3; //tem que ser maior ou igual a 0
 					switch($quantidadeErros){
@@ -140,13 +139,13 @@
 				/*O while recebe como parâmetro um valor booleano
 				e permanece em looping até quando a condição for
 				verdadeira*/
-				echo "<p>Scont = 0;<br/>
-				while(Scont++ < 10) {<br/>
-					echo Scont;<br/>
-				}</p>";
+				echo '<p>Scont = 0;<br/>
+				while($cont++ < 10) {<br/>
+					echo $cont;<br/>
+				}</p>';
 				$cont = 0;
 				while($cont++ < 10) {
-					echo $cont."<br/>";
+					echo $cont."  ";
 				}
 				?>
 				<br/>
@@ -156,14 +155,140 @@
 				o primeiro é a inicialização do contador
 				o segundo é um booleano que define o final do contador
 				o terceiro é o incremento para o contador */
-				echo "<p>for(Scont = 1; Scont <= 10; Scont++){<br>
-					echo Scont<br>
-				}</p>";
+				echo '<p>for($cont = 1; $cont <= 10; $cont++){<br>
+					echo $cont<br>
+				}</p>';
 				for($cont = 1; $cont <= 10; $cont++){
-					echo $cont."<br/>";
+					echo $cont."  ";
 				}
 				
 				?>
+				<br/>
+				
+				<h1>FUNÇÃO ISSET()</h1>
+
+				<p> A função isset() recebe como parâmetro a variável a ser verificada e retorna um booleano, informando se esta variável está ou não declarada na execução do programa.</p>
+
+				<H2> QUANDO A VARIÁVEL NÃO ESTÁ DECLARADA</H2>
+				<?php
+					//declarar uma variável porém deixa-la nula:
+					echo  '$variavel;<br>';
+					$variavel;
+					if (isset($variavel)){
+						echo "A variável está declarada";
+					}else{
+						echo "A variável não está declarada";
+					}
+				?>
+				<h2> QUANDO A VARIÁVEL ESTÁ DECLARADA</h2>
+				<?PHP
+					echo  '$variavel = 123;<br>';
+					//declarar uma variável porém deixa-la nula:
+					$variavel = 123;
+					if (isset($variavel)){
+						echo "A variável está declarada";
+					}else{
+						echo "A variável não está declarada";
+				}
+				?>
+
+				<br/>
+
+				<h1>Strings no PHP</h1>
+				<?php
+					/*Declaramos uma variável string para armazenar
+					uma linguagem de programação*/
+					$linguagemProgramacao = 'Python';
+				?>
+				<h2>echo com aspas simples:</h2>
+				<?PHP
+					echo '<p>Estudar $linguagemProgramacao é muito legal!!</p>'				
+				?>
+				<h2>echo com aspas duplas:</h2>
+				<?PHP
+					echo "<p>Estudar $linguagemProgramacao é muito legal!!</p>"			
+				?>
+				<br/>
+				<h1>Print no PHP</h1>
+				<?PHP
+					$faculdade = "Uniasselvi";
+				?>
+				<h2>Print com aspas simples e duplas:</h2>
+				<?PHP
+					print 'Estudar na $faculdade é muito legal! (simples)<br>';
+					print "Estudar na $faculdade é muito legal! (duplas)";
+				?>
+
+				<br>
+				<h1>Manipulação de Strings</h1>
+				<h2>Tirando Espaços: trim(), ltrim(), rtrim()</h2>
+				<!--
+				• trim (): remove os espaços em branco em volta da string.
+				• ltrim(): remove os espaços em branco à esquerda da string.
+				• rtrim(): remove os espaços em branco à direita da string. 
+				-->
+				<?PHP
+					$stringcomespacosemvolta = "   três espaços de cada lado   ";
+					print "{".$stringcomespacosemvolta."}<br>";
+
+					$stringsemespacosemvolta = trim($stringcomespacosemvolta);
+					print "Com trim(): {".$stringsemespacosemvolta."}<br>";
+
+					$stringsemespacosemvolta = ltrim($stringcomespacosemvolta);
+					print "Com ltrim(): {".$stringsemespacosemvolta."}<br>";
+
+					$stringsemespacosemvolta = rtrim($stringcomespacosemvolta);
+					print "Com rtrim(): {".$stringsemespacosemvolta."}<br>";
+				?>
+				<br>
+				<h2>Invertendo Strings: strrev()</h2>
+				<?PHP
+					$stringnormal = 'BAKEMONOGATARI';
+					$stringinvertida = strrev($stringnormal);
+					print "String normal: $stringnormal <br>";
+					print "String invertida com strrev(): $stringinvertida <br>";
+				?>
+				<br>
+				<h2>Transformando strings em maiúsculas e minúsculas: strtolower(), strtoupper(), ucfirst()</h2>
+				<?PHP
+					$stringMM = 'i will BACK';
+					print "String normal: $stringMM<br>";
+
+					$stringMU = strtoupper($stringMM);
+					print "String com a função strtoupper(): $stringMU<br>";
+
+					$stringML = strtolower($stringMM);
+					print "String com a função strtolower(): $stringML<br>";
+
+					$stringUF = ucfirst($stringMM);
+					print "String com a função ucfirst(): $stringUF";
+				?>
+
+				<br>
+				<h2>Substituindo strings com str_replace()</h2>
+				<?PHP
+					$textoriginal = 'My name is Gabriel';
+					print "Este é o texto original: $textoriginal<br>";
+					$textoalterado = str_replace("Gabriel","Leirbag",$textoriginal);
+					print("Este é o texto alterado com str_replace(): $textoalterado");
+				?>
+
+				<br>
+				<h2>Obtendo o tamanho das strings com strlen()</h2>
+				<?php
+					$nomeanime = 'Watashi Ga Motenai no wa Dou Kangaetemo Omaera Ga Warui!';
+					$tamanhodaString = strlen($nomeanime);
+					print "O nome do anime '$nomeanime' tem $tamanhodaString letras";
+
+				?>
+				<br>
+
+				<h1>Redirecionamento de páginas</h1>
+				<h2>Redirecionando usando header()</h2>
+				<?php
+					print 'header("location: <u>link do site</u>")<br>';
+				?>
+
 				
 	</body>
 </html>
