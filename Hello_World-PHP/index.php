@@ -289,6 +289,50 @@
 					print 'header("location: <u>link do site</u>")<br>';
 				?>
 
+				<br>
+				<h1>Arrays no PHP</h1>
+				<?PHP
+					/*Declaração de um array:
+					Note que podemos inserir tanto tipos numéricos quanto strings
+					Em seguida obtemos o valor de cada posição do array
+					utilizando o nome da variável seguido do índice
+					da posição entre colchetes
+					Note que o indice inicia em zero*/
+
+					$firstArray = array(1,2,3,"quatro",5);
+					for ($i = 0; $i <= 4; $i++){
+						print $firstArray[$i].", ";
+					}
+
+					//declaração de array vazio
+					$arrayVazio = array();
+					if(isset($arrayVazio)){
+						print "<br>O array está declarado!";
+					}
+					
+					//Mesmo estando declarado, nenhum indice terá valor
+					//por exemplo, se tentarmos acessar o indice [0]
+					if (isset($arrayVazio[0])){
+						//não vai funcionar
+						print "A primeira posição do array vazio está declarada";
+					}
+
+				?>
+				<br>
+				<h2>Imprimindo arrays com print</h2>
+				<?php
+					print_r($firstArray);
+					print "<br/>";
+					print_r($arrayVazio);
+
+					
+				?>
+
+				<h2>Removendo elementos de arryas com unset()</h2>
+				<?PHP
+					
+				?>
+
 				
 	</body>
 </html>
