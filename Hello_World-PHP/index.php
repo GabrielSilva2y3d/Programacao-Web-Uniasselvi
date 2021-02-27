@@ -330,9 +330,76 @@
 
 				<h2>Removendo elementos de arryas com unset()</h2>
 				<?PHP
-					
+					unset($firstArray[1]);
+					print_r($firstArray);
+					print '<br>';
+					if (isset($firstArray[1])){
+						print "Ainda está declarado";
+					}else{
+						print 'Foi destruido!<br>';
+					}
+				?>
+				<br>
+				<h2>Contando os elementos de uma array com count()/sizeof()</h2>
+				<?php
+					print 'Contando com count(): '.count($firstArray);
+					print '<br>';
+					print 'Contando com sizeof(): '.sizeof($firstArray);
+					print '<br>';
 				?>
 
+				<br>
+				<h2>Declarando o índice de uma array</h2>
+				<?php
+					/* → é possível definir o índice de um elemento em um array.
+					→ Os elementos sem índice declarado recebem um índice numérico definido automaticamente pelo PHP 
+					→ Vamos criar um array, inicializá-lo com algumas letras, que receberão o índice numérico atribuído automaticamente
+					pelo PHP e adicionaremos outros dois elementos no array, para os quais declararemos um índice no formato string*/
+
+					$array = array('K','A','K','A','R','O','T','O');
+					$array['Son'] = 'Goku';
+					$array['Rival'] = 'Vegita';
+					print_r($array);
+				?>
+				
+				<br>
+				
+				<h2>Imprimindo vetores com for each</h2>
+				<?php
+					foreach($array as $valor){
+						print $valor;
+					}
+				?>
+
+				<br>
+				<h1>Funções</h1>
+				<h2>Declarando funções: function</h2>
+				<?php
+				//declarando uma função que vai somar dois valores
+					function soma($valor1, $valor2){
+						$resultado = $valor1 + $valor2;
+						return $resultado;
+					}
+				// Implementando a função	
+					$num1 = 5;
+					$num2 = 8;
+					print soma($num1,$num2);	
+				?>
+				
+				<br>
+				<h2>Separando o código fonte em mais de um arquivo</h2>
+				<h2>include(), require()</h2>
+				<?php
+					//referencia as constantes e funções contidas em
+					//arquivos PHP externos
+					require("constantes.php");
+					include("funcoes.php");
+
+					//executa a função de um arquivo externo
+					print multiplica(dois, quatro);
+				?>
+
+					
 				
 	</body>
 </html>
