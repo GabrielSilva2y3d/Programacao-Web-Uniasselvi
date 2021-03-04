@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Hello World</title>
+    <script type="text/javascript">
+        document.write("<h1>Hello World</h1>");
+    </script>
+</head>
+
+<body>
+    <h1>Javascript</h1>
+    <h2>1 - Variáveis</h2>
+    <script type="text/javascript">
+        /*em js a inicialização de variáveis é opcional*/
+        document.write('<p>');
+
+        var variavelString = 'Esta variável armazena texto ';
+        document.write('Variável String: ' + variavelString + '<br>')
+
+        var variavelNumerica = 10;
+        document.write('Variável Numérica: ' + variavelNumerica + '<br>')
+
+        var variavelDeBlocoAnonimo = 'Esta variável foi ' + 'declarada em um bloco anônimo ';
+        document.write('A variável do bloco anônimo permanece ' + 'declarada mesmo depois do bloco: ' + variavelDeBlocoAnonimo);
+
+        document.write('</p>');
+    </script>
+    <br>
+    <h2>2 - Operadores Aritiméticos</h2>
+    <script type="text/javascript">
+        document.write('<p>')
+        var x = 1;
+        var y = 2;
+        var soma = x + y;
+        document.write('Soma (x + y):  ' + soma + '<br>');
+
+        var subtracao = x - y;
+        document.write('Subtração (x - y): ' + subtracao + '<br>')
+
+        var multiplicacao = y * 6;
+        document.write('Multiplicação (y * 6): ' + multiplicacao + '<br>');
+
+        var divisao = multiplicacao / 2;
+        document.write('Divisão: ' + divisao + '<br>');
+
+        var restoDivisao = divisao % 2;
+        document.write('Resto da Divisão: ' + restoDivisao + '<br>')
+
+        var incrementoAnterior = 2;
+        document.write('Incremento Anterior: ' + ++incrementoAnterior + ' -> ' + incrementoAnterior + '<br>');
+
+        var incrementoPosterior = 2;
+        document.write('Incremento Posterior: ' + incrementoPosterior++ + ' -> ' + incrementoPosterior + '<br>');
+
+        var decrementoAnterior = 2;
+        document.write('Decremento Anterior: ' + --decrementoAnterior + ' -> ' + decrementoAnterior + '<br>');
+
+        var decrementoPosterior = 2;
+        document.write('Decremento Posterior: ' + decrementoPosterior-- + ' -> ' + decrementoPosterior + '<br>');
+
+        var semParenteses = 2 + 2 * 3;
+        document.write('Operação sem parênteses: 2 + 2 * 3 =  ' + semParenteses + '<br>');
+
+        var comParenteses = (2 + 2) * 3;
+        document.write('Operação com parênteses: (2 + 2) * 3 = ' + comParenteses + '<br>');
+
+        var divZero = 0;
+        document.write('Dividindo por zero: ' + 4 / divZero + '<br>')
+
+        document.write('</p>')
+    </script>
+</body>
+
+</html>
