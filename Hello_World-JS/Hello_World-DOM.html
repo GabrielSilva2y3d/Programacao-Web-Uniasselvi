@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World DOM</title>
+</head>
+
+<body>
+    <h1>DOM - Document Object Model</h1>
+    <!--
+    <p id="paragrafo">Hello World!</p>
+
+    <script type="text/javascript">
+        var texto = document.getElementById("paragrafo").innerHTML;
+        alert(texto);
+    </script>
+
+    <br>
+    <h2>Validação de Formularios</h2>
+    <h3>Formulário de cadastro</h3>
+
+    <form id="formulario">
+        <p><label>Nome: <input type="text" id="nome"></label></p>
+        <p><label>Email: <input type="text" id="email"></label></p>
+        <p><input type="submit" value="Enviar"></p>
+    </form>
+
+    <script type="text/javascript">
+        var validarform = function() {
+            var nome = document.
+            getElementById("nome").value;
+
+            var email = document.getElementById("email").value;
+
+            if (nome == "") {
+                alert("É necessário informar o nome!");
+            } else if (email == "") {
+                alert("É necessário informar o email!");
+            }
+        }
+
+        document.getElementById("formulario").onsubmit = validarform;
+    </script>
+-->
+    <br>
+    <h2>Validação de Formularios HTML5</h2>
+    <h3>Formulário de cadastro HTML5</h3>
+    <form id="formulario">
+
+        <p><label>Nome: <input type="text" required></label></p>
+
+        <p><label>Email: <input type="text" required> </label></p>
+
+        <p><input type="submit" value="Enviar"></p>
+
+    </form>
+
+
+
+</body>
+
+</html>
