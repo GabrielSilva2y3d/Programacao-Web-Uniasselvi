@@ -2,7 +2,7 @@
 $servidor = "localhost";
 $usuario = "root";
 $senha = "";
-$database = "tabela de hábitos";
+$database = "listadehabitos";
 
 $conexao = new mysqli($servidor, $usuario, $senha, $database);
 
@@ -11,7 +11,7 @@ if ($conexao -> connect_error){
 }
 
 $nome = $_GET["nome"];
-$sql = "INSERT INTO hábitos (nome, status) VALUES ('".$nome."', 'A' )";
+$sql = "INSERT INTO habitos (nome, status) VALUES ('".$nome."', 'A' )";
 
 if (!($conexao -> query($sql) === TRUE)) {
     $conexao -> close();

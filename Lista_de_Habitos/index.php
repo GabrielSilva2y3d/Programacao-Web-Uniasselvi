@@ -18,7 +18,7 @@
     $servidor = "localhost";
     $usuario = "root";
     $senha = "";
-    $database = "tabela de hábitos";
+    $database = "listadehabitos";
 
     $conexao = new mysqli($servidor, $usuario, $senha, $database);
 
@@ -26,7 +26,7 @@
         die("Falha na conexão: ".$connexao -> connect_error);
     }
 
-    $sql = " Select ID "."    , nome"." FROM hábitos "."Where status = 'A'";
+    $sql = " Select id "."    , nome"." FROM habitos "."Where status = 'A'";
     $resultado = $conexao ->query($sql);
 
     if ($resultado -> num_rows > 0) {
@@ -40,16 +40,16 @@
                 while ($registro = $resultado -> fetch_assoc()) {
                         ?>
                         <tr>
-                            <td><? print $registro["nome"]; ?></td>
-                            <td><a href="vencerHabito.php?id=<? print $registro["id"]; ?>">Vencer</a></td>
-                            <td><a href="desistirHabito.php?id<? print $registro["id"]?>">Desistir</a></td>
+                            <td><?php echo $registro["nome"]; ?></td>
+                            <td><a href="vencerHabito.php?id= <?php echo $registro["id"]; ?>">Vencer</a></td>
+                            <td><a href="desistirHabito.php?id= <?php echo $registro["id"]; ?>">Desistir</a></td>
                         </tr>
                         <?php
                             }
                         ?>
             </tbody>
 
-</table>
+		</table>
     <p>Continue mudando sua vida!</p>
     <p>Cadastre mais hábitos!</p>
         <?php
@@ -60,7 +60,7 @@
             <?php
         }
 
-        $conexão -> close();
+        $conexao -> close();
         ?>
         <a href="novohabito.php"> Cadastrar Hábitos</a>
     </div>

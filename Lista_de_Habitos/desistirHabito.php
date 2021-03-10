@@ -2,21 +2,21 @@
 $servidor = "localhost";
 $usuario = "root";
 $senha = "";
-$database = "tabela de hábitos";
+$database = "listadehabitos";
 
-$conexao = new mysqli($servidor, $usuario, $senha, $database);
+$conn = new mysqli($servidor, $usuario, $senha, $database);
 
-if ($conexao -> connect_error){
+if ($conn -> connect_error){
     die("Falha na conexão: ".$connexao -> connect_error);
 }
 
 $id = $_GET["id"];
-$sql = "DELETE FROM hábitos WHERE id=".$id;
+$sql = "DELETE FROM habitos WHERE id=".$id;
 
-if (!($conexao -> query($sql) === TRUE)) {
-    $conexao -> close();
-    die("Erro ao excluir: ".$conexao->error);
+if (!($conn -> query($sql) === TRUE)) {
+    $conn -> close();
+    die("Erro ao excluir: ".$conn->error);
 }
-$conexao->close();
+$conn->close();
 header("Location: index.php");
 ?>

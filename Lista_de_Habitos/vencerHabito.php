@@ -2,21 +2,21 @@
 $servidor = "localhost";
 $usuario = "root";
 $senha = "";
-$database = "tabela de hábitos";
+$database = "listadehabitos";
 
-$conexao = new mysqli($servidor, $usuario, $senha, $database);
+$conn = new mysqli($servidor, $usuario, $senha, $database);
 
-if ($conexao -> connect_error){
-    die("Falha na conexão: ".$connexao -> connect_error);
+if ($conn -> connect_error){
+    die("Falha na conexão: ".$conn -> connect_error);
 }
 
 $id = $_GET["id"];
-$sql = "UPDATE hábitos SET status = 'V' WHERE id=".$id;
+$sql = "UPDATE habitos SET status = 'V' WHERE id=".$id;
 
-if (!($conexao -> query($sql) === TRUE)) {
-    $conexao -> close();
-    die("Erro ao atualizar: ".$conexao->error);
+if (!($conn -> query($sql) === TRUE)) {
+    $conn -> close();
+    die("Erro ao atualizar: ".$conn->error);
 }
-$conexao->close();
+$conn->close();
 header("Location: index.php");
 ?>
