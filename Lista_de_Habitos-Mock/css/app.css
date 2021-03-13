@@ -1,0 +1,49 @@
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: .3rem;
+}
+
+.main {
+    width: 350px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+body {
+    text-align: center;
+    background-color: rgb(80, 80, 80);
+}
+
+a {
+    font-family: sans;
+    color: blue;
+}
+
+p,
+td,
+input,
+h1 {
+    font-family: sans;
+}
+
+#list {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: aliceblue;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#topdiv {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: groove;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}

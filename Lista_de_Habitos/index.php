@@ -62,7 +62,7 @@
 
         $conexao -> close();
         ?>
-        <a href="novohabito.php"> Cadastrar Hábitos</a>
+        <a href="novoHabito.php"> Cadastrar Hábitos</a>
     </div>
 
 </body>
