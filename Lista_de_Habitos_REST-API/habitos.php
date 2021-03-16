@@ -49,7 +49,7 @@ function f_select_habito(){
         $queryWhere .= $param." = '".$_GET[$param]."'";
     }
         //executa a query da variavel $sql
-        $sql = " SELECT id "." , nome "." , status "." FROM habitos ";
+        $sql = " SELECT id, nome, status FROM habitos ";
 
         //utiliza o where criado como base nos parâmetros do GET
         if ($queryWhere != " WHERE ") {
