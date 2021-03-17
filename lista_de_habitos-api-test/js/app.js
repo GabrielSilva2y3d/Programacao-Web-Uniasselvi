@@ -6,7 +6,7 @@
     do arquivo angular - route.js 
 */
 
-var app = angular.module("app", ['ngRoute']);
+var app = angular.module("app", ["ngRoute"]);
 
 //Declaramos o controller para a página api-test-get.html
 
