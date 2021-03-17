@@ -6,48 +6,48 @@
     do arquivo angular - route.js 
 */
 
-var app = angular.module("app", [" ngRoute "]);
+var app = angular.module("app", ['ngRoute']);
 
-//Declaramos o controller para a página api - test - get.html
+//Declaramos o controller para a página api-test-get.html
 
 app.controller("apiTestGetController", ["$scope", "$http", function($scope, $http) {
     $scope.result = "";
     $scope.id = "";
     $scope.listaDeHabitosApiGet = function() {
         if ($scope.id == "") {
-            $http.get("http://localhost/Lista_de_Habitos_REST-API/habitos.php").success(function(data) {
+            $http.get("http://localhost:3000/Lista_de_Habitos_REST-API/habitos.php").success(function(data) {
                 var output = JSON.stringify(data);
                 $scope.result = output;
             });
         } else {
-            $http.get("http://localhost/Lista_de_Habitos_REST-API/habitos.php", {
+            $http.get("http://localhost:3000/Lista_de_Habitos_REST-API/habitos.php", {
                 params: {
                     id: $scope.id
                 }
             }).success(function(data) {
                 var output = JSON.stringify(data);
                 $scope.result = output;
-            })
+            });
         }
     }
 }]);
 
 // Declaramos o controller para a página api-test-post.html
 
-api.controller("apoTestPostController", ["$scope ", "$http", function($scope, $http) {
+app.controller("apiTestPostController", ["$scope ", "$http", function($scope, $http) {
     $scope.result = "";
-    $http.result = "";
+    $scope.nome = "";
 
     //criar
     $scope.listaDeHabitosApiPost = function() {
-        $http.post("http://localhost/Lista_de_Habitos_REST-API/habitos.php", {
+        $http.post("http://localhost:3000/Lista_de_Habitos_REST-API/habitos.php", {
             nome: $scope.nome
         }).success(function(data) {
             var output = JSON.stringify(data);
             $scope.result = output;
         });
     };
-}])
+}]);
 
 // Declaramos o controller para a página api-test-put.html
 
@@ -60,7 +60,7 @@ app.controller("apiTestPutController", ["$scope", "$http", function($http, $scop
 
     //atualizar
     $scope.listaDeHabitosApiPut = (function() {
-        $http.put("http://localhost/Lista_de_Habitos_REST-API/habitos.php", { id: $scope.id, nome: $scope.nome, status: $scope.status }).success(function(data) {
+        $http.put("http://localhost:3000/Lista_de_Habitos_REST-API/habitos.php", { id: $scope.id, nome: $scope.nome, status: $scope.status }).success(function(data) {
             var output = JSON.stringify(data);
             $scope.result = output;
         });
@@ -69,14 +69,14 @@ app.controller("apiTestPutController", ["$scope", "$http", function($http, $scop
 
 
 // Declaramos o controller para a página api-test-delete.html
-
 app.controller("apiTestDeleteController", ["$scope", "$http", function($scope, $http) {
+
     $scope.result = "";
     $scope.id = "";
 
     //deletar
     $scope.listaDeHabitosApiDel = (function() {
-        $http.delete("http://localhost/Lista_de_Habitos_REST-API/habitos.php", {
+        $http.delete("http://localhost:3000/Lista_de_Habitos_REST-API/habitos.php", {
             params: {
                 id: $scope.id
             }
@@ -97,5 +97,20 @@ app.controller("welcomeController", ["$scope", function($scope) {}]);
  e qual arquivo.html será exibido */
 
 app.config(function($routeProvider) {
-    $routeProvider.when("/api-test-get", { controller: "apiTestGetController", templateUrl: "partials/api-test-get.html" }).when("/api-test-post", { controller: "apiTestPostController", templateUrl: "partials/api-test-post.html" }).when("/api-test-put", { controller: "apiTestPutController", templateUrl: "partials/api-test-put.html" }).when("/api-test-delete", { controller: "apiTestDeleteController", templateUrl: "partials/api-test-delete.html" }).otherwise({ controller: "welcomeController", templateUrl: "partials/welcome.html" });
+    $routeProvider.when("/api-test-get", {
+        controller: "apiTestGetController",
+        templateUrl: "partials/api-test-get.html"
+    }).when("/api-test-post", {
+        controller: "apiTestPostController",
+        templateUrl: "partials/api-test-post.html"
+    }).when("/api-test-put", {
+        controller: "apiTestPutController",
+        templateUrl: "partials/api-test-put.html"
+    }).when("/api-test-delete", {
+        controller: "apiTestDeleteController",
+        templateUrl: "partials/api-test-delete.html"
+    }).otherwise({
+        controller: "welcomeController",
+        templateUrl: "partials/welcome.html"
+    });
 });

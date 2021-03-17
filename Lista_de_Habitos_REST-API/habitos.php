@@ -17,7 +17,7 @@ function f_parametro_to_habito(){
 //funcão que retorna uma conexão com o banco de dados
 function f_obtem_conexao(){
     $servidor = "localhost";
-    $usuario = "host";
+    $usuario = "root";
     $senha = "";
     $database = "listadehabitos";
 
@@ -49,12 +49,14 @@ function f_select_habito(){
         $queryWhere .= $param." = '".$_GET[$param]."'";
     }
         //executa a query da variavel $sql
-        $sql = " SELECT id, nome, status FROM habitos ";
+         $sql = " SELECT id, nome, status FROM habitos ";
 
         //utiliza o where criado como base nos parâmetros do GET
         if ($queryWhere != " WHERE ") {
             $sql .= $queryWhere;
         }
+		
+		$conexao = f_obtem_conexao();
 
         //executa a query
         $resultado = $conexao -> query($sql);
